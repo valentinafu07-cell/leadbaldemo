@@ -66,19 +66,19 @@ const Navbar = () => {
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-background/95 backdrop-blur-md shadow-elegant border-b border-border' 
+            ? 'bg-background/80 backdrop-blur-md shadow-elegant border-b border-border' 
             : 'bg-transparent'
         }`}
       >
-        <div className="section-container py-4">
+        <div className="section-container py-6">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center">
+            {/* Logo - Centered and Bigger */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-auto lg:transform-none flex items-center">
               <a href="/" className="flex items-center space-x-3">
                 <img 
                   src="/leadbal-logo.jpg" 
                   alt="Leadbal" 
-                  className="h-8 w-auto"
+                  className="h-12 lg:h-16 w-auto"
                 />
               </a>
             </div>
