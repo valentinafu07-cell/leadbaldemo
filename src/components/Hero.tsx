@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 opacity-0 animate-fade-in" style={{
             animationDelay: "0.6s"
           }}>
-              {["Instant pickup", "Automated bookings", "Outbound revival"].map((chip, index) => <span key={index} className="text-sm text-muted-foreground bg-card px-3 py-1 rounded-full border border-border">
+              {["Increase Staff Productivity", "Save Valuable Time", "Turn Missed Calls Into Revenue"].map((chip, index) => <span key={index} className="text-sm text-muted-foreground bg-card px-3 py-1 rounded-full border border-border">
                   {chip}
                 </span>)}
             </div>
