@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="leadbal-chip mb-6 opacity-0 animate-fade-in inline-flex" style={{
             animationDelay: "0.1s"
           }}>
-              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-primary-foreground mr-2 text-xs font-bold">24/7</span>
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground mr-2 text-xs font-bold">24/7</span>
               <span>Voice AI • Enterprise Controls</span>
             </div>
             
