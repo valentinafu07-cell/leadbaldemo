@@ -110,39 +110,39 @@ const Hero = () => {
             animationDelay: "0.9s"
           }}>
               {/* AI Call Interface Mockup */}
-              <div className="bg-card rounded-3xl p-8 shadow-elegant-hover border border-border/50">
-                <div className="space-y-6">
+              <div className="bg-card rounded-3xl p-6 lg:p-8 shadow-elegant-hover border border-border/50">
+                <div className="space-y-5">
                   {/* Call Status */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between pb-2">
                     <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Live Call</span>
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse flex-shrink-0"></div>
+                      <span className="text-sm font-medium whitespace-nowrap">Live Call</span>
                     </div>
                     <span className="text-xs text-muted-foreground">00:47</span>
                   </div>
 
                   {/* Caller Info */}
                   <div className="bg-background rounded-2xl p-4 space-y-3">
-                    <h3 className="font-semibold">Sarah Johnson</h3>
-                    <p className="text-sm text-muted-foreground">Requesting consultation for kitchen remodel</p>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Qualified Lead</span>
-                      <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Budget: $25k+</span>
+                    <h3 className="font-semibold text-sm lg:text-base">Sarah Johnson</h3>
+                    <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">Requesting consultation for kitchen remodel</p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full whitespace-nowrap">Qualified Lead</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full whitespace-nowrap">Budget: $25k+</span>
                     </div>
                   </div>
 
                   {/* AI Response */}
                   <div className="bg-primary/5 rounded-2xl p-4">
                     <div className="flex items-start space-x-3">
-                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-xs font-bold text-primary-foreground">AI</span>
                       </div>
-                      <div className="flex-1">
-                        <p className="text-sm">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs lg:text-sm leading-relaxed">
                           "I'd be happy to schedule a consultation. I have availability this Thursday at 2 PM or Friday at 10 AM. Which works better for you?"
                         </p>
-                        <div className="flex items-center mt-2 space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <div className="flex items-center mt-3 space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full animate-pulse flex-shrink-0"></div>
                           <span className="text-xs text-muted-foreground">Booking calendar...</span>
                         </div>
                       </div>
@@ -150,11 +150,11 @@ const Hero = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-2">
-                    <button className="flex-1 bg-primary text-primary-foreground text-sm py-2 px-4 rounded-lg font-medium">
+                  <div className="flex flex-col sm:flex-row gap-2 pt-2">
+                    <button className="flex-1 bg-primary text-primary-foreground text-xs lg:text-sm py-3 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors">
                       Book Appointment
                     </button>
-                    <button className="flex-1 bg-background text-foreground text-sm py-2 px-4 rounded-lg font-medium border border-border">
+                    <button className="flex-1 bg-background text-foreground text-xs lg:text-sm py-3 px-4 rounded-lg font-medium border border-border hover:bg-muted/50 transition-colors">
                       Transfer to Human
                     </button>
                   </div>
