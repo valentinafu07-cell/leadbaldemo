@@ -44,8 +44,8 @@ const Hero = () => {
       <div className="hidden lg:block absolute -top-[10%] -right-[5%] w-1/3 h-[60%] bg-subtle-gradient opacity-30 blur-3xl rounded-full parallax" data-speed="0.05"></div>
       
       <div className="section-container relative z-10" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center min-h-screen lg:min-h-0 pt-24 lg:pt-0">
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+        <div className="flex flex-col gap-12 items-center min-h-screen pt-24">
+          <div className="w-full text-center">
             {/* Badge */}
             <div className="leadbal-chip mb-6 opacity-0 animate-fade-in inline-flex" style={{
             animationDelay: "0.1s"
@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
             
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 opacity-0 animate-fade-in" style={{
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6 opacity-0 animate-fade-in" style={{
             animationDelay: "0.7s"
           }}>
               <button onClick={handleBookDemo} className="btn-primary magnetic-hover group">
