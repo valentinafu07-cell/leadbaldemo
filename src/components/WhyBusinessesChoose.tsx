@@ -60,19 +60,19 @@ const WhyBusinessesChoose = () => {
     {
       title: "More Focus",
       content: "Leadbal gives business owners more focus — by taking calls, scheduling, and inbox management off your plate.",
-      gradient: "from-primary/20 via-primary/10 to-transparent",
+      gradient: "from-primary via-primary to-primary",
       accent: "text-primary"
     },
     {
       title: "More Time", 
       content: "Leadbal creates more time — reclaiming hours each week so teams can concentrate on high-value work.",
-      gradient: "from-accent/20 via-accent/10 to-transparent",
+      gradient: "from-accent via-accent to-accent",
       accent: "text-primary"
     },
     {
       title: "More Revenue",
       content: "Leadbal drives more revenue — by capturing missed calls and reviving leads that would otherwise be lost.",
-      gradient: "from-orange-500/20 via-orange-500/10 to-transparent",
+      gradient: "from-orange-500 via-orange-500 to-orange-500",
       accent: "text-orange-500"
     }
   ];
@@ -137,9 +137,10 @@ const WhyBusinessesChoose = () => {
                   className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out border border-border/20"
                   style={getCardStyle(index)}
                 >
-                  {/* Futuristic Background */}
+                  {/* Solid Base */}
+                  <div className="absolute inset-0 bg-foreground" />
+                  {/* Opaque Gradient Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/80 to-foreground/60" />
                   
                   {/* Animated Grid Pattern */}
                   <div className="absolute inset-0 opacity-10">
