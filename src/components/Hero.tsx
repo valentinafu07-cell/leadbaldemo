@@ -1,26 +1,19 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play, Phone } from "lucide-react";
-
 const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [showAudioModal, setShowAudioModal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
-
   useEffect(() => {
     if (isMobile) return;
-    
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const elements = document.querySelectorAll('.parallax');
@@ -31,28 +24,21 @@ const Hero = () => {
         element.style.setProperty('--parallax-y', `${yPos}px`);
       });
     };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, {
+      passive: true
+    });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
-
   const handleBookDemo = () => {
     window.open("https://cal.com/leadbal/15min?user=leadbal&overlayCalendar=true", "_blank");
   };
-
   const handleCallDemo = () => {
     window.open("tel:+18889125883", "_self");
   };
-
   const handleListenDemo = () => {
     setShowAudioModal(true);
   };
-
-  return (
-    <section 
-      className="relative min-h-screen bg-gradient-to-br from-background via-background to-card flex items-center justify-center overflow-hidden" 
-      id="hero"
-    >
+  return <section className="relative min-h-screen bg-gradient-to-br from-background via-background to-card flex items-center justify-center overflow-hidden" id="hero">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-leadbal-gradient opacity-5 blur-3xl"></div>
       <div className="hidden lg:block absolute -top-[10%] -right-[5%] w-1/3 h-[60%] bg-subtle-gradient opacity-30 blur-3xl rounded-full parallax" data-speed="0.05"></div>
@@ -61,89 +47,68 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center min-h-screen lg:min-h-0 pt-24 lg:pt-0">
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             {/* Badge */}
-            <div 
-              className="leadbal-chip mb-6 opacity-0 animate-fade-in inline-flex" 
-              style={{ animationDelay: "0.1s" }}
-            >
+            <div className="leadbal-chip mb-6 opacity-0 animate-fade-in inline-flex" style={{
+            animationDelay: "0.1s"
+          }}>
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-primary-foreground mr-2 text-xs font-bold">24/7</span>
               <span>Voice AI • Enterprise Controls</span>
             </div>
             
             {/* Headline */}
-            <h1 
-              className="section-title mb-6 opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.3s" }}
-            >
-              Never miss a call.<br/>
+            <h1 className="section-title mb-6 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.3s"
+          }}>
+              Never miss a call.<br />
               <span className="text-gradient">Never miss. Always lead.</span>
             </h1>
             
             {/* Subheadline */}
-            <p 
-              style={{ animationDelay: "0.5s" }} 
-              className="section-subtitle mb-8 opacity-0 animate-fade-in max-w-2xl mx-auto lg:mx-0"
-            >
-              Leadbal answers, qualifies, and books — then follows up by SMS & email. 
-              Done-for-you setup; live in days.
-            </p>
+            <p style={{
+            animationDelay: "0.5s"
+          }} className="section-subtitle mb-8 opacity-0 animate-fade-in max-w-2xl mx-auto lg:mx-0">Leadbal answers, qualifies, and books then follows up by SMS & email. Done-for-you setup</p>
 
             {/* Trust Chips */}
-            <div 
-              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.6s" }}
-            >
-              {["Instant pickup", "Automated bookings", "Outbound revival"].map((chip, index) => (
-                <span key={index} className="text-sm text-muted-foreground bg-card px-3 py-1 rounded-full border border-border">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.6s"
+          }}>
+              {["Instant pickup", "Automated bookings", "Outbound revival"].map((chip, index) => <span key={index} className="text-sm text-muted-foreground bg-card px-3 py-1 rounded-full border border-border">
                   {chip}
-                </span>
-              ))}
+                </span>)}
             </div>
             
             {/* CTAs */}
-            <div 
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.7s" }}
-            >
-              <button 
-                onClick={handleBookDemo}
-                className="btn-primary magnetic-hover group"
-              >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.7s"
+          }}>
+              <button onClick={handleBookDemo} className="btn-primary magnetic-hover group">
                 Book a Private Demo
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </button>
               
-              <button 
-                onClick={handleListenDemo}
-                className="btn-secondary magnetic-hover group"
-              >
+              <button onClick={handleListenDemo} className="btn-secondary magnetic-hover group">
                 <Play className="mr-2 w-4 h-4" />
                 Listen to a Live Demo
               </button>
 
-              <button 
-                onClick={handleCallDemo}
-                className="text-primary hover:text-primary/80 font-medium transition-colors group flex items-center justify-center lg:justify-start"
-              >
+              <button onClick={handleCallDemo} className="text-primary hover:text-primary/80 font-medium transition-colors group flex items-center justify-center lg:justify-start">
                 <Phone className="mr-2 w-4 h-4" />
                 Call the live demo
               </button>
             </div>
 
             {/* Disclaimer */}
-            <p 
-              className="smallprint text-center lg:text-left opacity-0 animate-fade-in max-w-lg mx-auto lg:mx-0"
-              style={{ animationDelay: "0.8s" }}
-            >
+            <p className="smallprint text-center lg:text-left opacity-0 animate-fade-in max-w-lg mx-auto lg:mx-0" style={{
+            animationDelay: "0.8s"
+          }}>
               Demo audio is illustrative. Outcomes depend on configuration. Representative pilot results; individual outcomes vary.
             </p>
           </div>
           
           {/* Hero Visual */}
           <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-            <div 
-              className="relative z-10 opacity-0 animate-fade-in" 
-              style={{ animationDelay: "0.9s" }}
-            >
+            <div className="relative z-10 opacity-0 animate-fade-in" style={{
+            animationDelay: "0.9s"
+          }}>
               {/* AI Call Interface Mockup */}
               <div className="bg-card rounded-3xl p-8 shadow-elegant-hover border border-border/50">
                 <div className="space-y-6">
@@ -224,15 +189,11 @@ const Hero = () => {
       </div>
 
       {/* Audio Modal */}
-      {showAudioModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+      {showAudioModal && <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="glass bg-background max-w-md w-full rounded-2xl p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold">Live Demo Audio</h3>
-              <button 
-                onClick={() => setShowAudioModal(false)}
-                className="text-muted-foreground hover:text-foreground text-2xl"
-              >
+              <button onClick={() => setShowAudioModal(false)} className="text-muted-foreground hover:text-foreground text-2xl">
                 ×
               </button>
             </div>
@@ -249,10 +210,7 @@ const Hero = () => {
               </p>
             </div>
           </div>
-        </div>
-      )}
-    </section>
-  );
+        </div>}
+    </section>;
 };
-
 export default Hero;
