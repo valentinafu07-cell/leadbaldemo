@@ -60,32 +60,35 @@ const WhyBusinessesChoose = () => {
     {
       title: "More Focus",
       content: "Leadbal gives business owners more focus — by taking calls, scheduling, and inbox management off your plate.",
-      base: "bg-dark-900",
-      linearGradient: "bg-gradient-to-br from-dark-navy via-slate-800 to-dark-navy",
-      radialGradient: "radial-gradient(ellipse at 20% 25%, hsl(var(--leadbal-blue)) 20%, transparent 80%)",
-      accentRing: "ring-1 ring-cyan-400/12 ring-inset",
+      base: "#0A0F1A", // Dark Navy base
+      linearGradient: "linear-gradient(135deg, #0A0F1A 0%, #152037 45%, #0A0F1A 100%)",
+      radialGradient: "radial-gradient(ellipse at 20% 25%, #0057FF 20%, transparent 80%)",
+      accentRing: "ring-1 ring-[#4BE2FF]/12 ring-inset",
       titleColor: "text-white",
-      textShadow: "drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+      textShadow: "drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]",
+      badgeStyle: "bg-[#F6F7F9]/95 text-[#0A0F1A] ring-1 ring-inset ring-[#4BE2FF]/20"
     },
     {
       title: "More Time", 
       content: "Leadbal creates more time — reclaiming hours each week so teams can concentrate on high-value work.",
-      base: "bg-slate-900",
-      linearGradient: "bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900",
+      base: "#0F1522", // Navy variant
+      linearGradient: "linear-gradient(25deg, #0F1522 0%, #1A2440 50%, #0F1522 100%)",
       radialGradient: "radial-gradient(ellipse at 70% 60%, #8A7CFF 15%, transparent 85%)",
-      accentRing: "ring-1 ring-violet-400/10 ring-inset",
+      accentRing: "ring-1 ring-[#8A7CFF]/10 ring-inset",
       titleColor: "text-white",
-      textShadow: "drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+      textShadow: "drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]",
+      badgeStyle: "bg-[#F6F7F9]/95 text-[#0A0F1A] ring-1 ring-inset ring-[#8A7CFF]/20"
     },
     {
       title: "More Revenue",
       content: "Leadbal drives more revenue — by capturing missed calls and reviving leads that would otherwise be lost.",
-      base: "bg-slate-950",
-      linearGradient: "bg-gradient-to-br from-slate-900 via-blue-950 to-slate-950",
+      base: "#0B111E", // Very dark blue
+      linearGradient: "linear-gradient(200deg, #0B111E 0%, #12203A 50%, #0B111E 100%)",
       radialGradient: "radial-gradient(ellipse at 50% 15%, #FF7A45 12%, transparent 80%)",
-      accentRing: "ring-1 ring-orange-400/10 ring-inset",
+      accentRing: "ring-1 ring-[#FF7A45]/10 ring-inset",
       titleColor: "text-white",
-      textShadow: "drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+      textShadow: "drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]",
+      badgeStyle: "bg-[#F6F7F9]/95 text-[#0A0F1A] ring-1 ring-inset ring-[#FF7A45]/20"
     }
   ];
 
@@ -150,58 +153,75 @@ const WhyBusinessesChoose = () => {
                   style={getCardStyle(index)}
                 >
                   {/* Solid Base */}
-                  <div className={`absolute inset-0 ${card.base}`} />
+                  <div 
+                    className="absolute inset-0"
+                    style={{ backgroundColor: card.base }}
+                  />
                   
                   {/* Linear Gradient Overlay */}
-                  <div className={`absolute inset-0 ${card.linearGradient} opacity-90`} />
-                  
-                  {/* Radial Gradient Overlay */}
                   <div 
-                    className="absolute inset-0 opacity-70"
-                    style={{
-                      background: card.radialGradient
+                    className="absolute inset-0"
+                    style={{ 
+                      background: card.linearGradient,
+                      opacity: 0.85
                     }}
                   />
                   
-                  {/* Subtle Grain Noise */}
-                  <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay">
+                  {/* Radial Gradient Overlay */}
+                  <div 
+                    className="absolute inset-0"
+                    style={{
+                      background: card.radialGradient,
+                      opacity: 0.7
+                    }}
+                  />
+                  
+                  {/* Subtle Grain Noise for Texture */}
+                  <div className="absolute inset-0 opacity-[0.12] mix-blend-overlay">
                     <div 
                       className="absolute inset-0"
                       style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                        backgroundSize: '200px 200px'
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                        backgroundSize: '180px 180px'
                       }}
                     />
                   </div>
 
-                  {/* Animated Grid Pattern */}
-                  <div className="absolute inset-0 opacity-5">
+                  {/* Cinematic Light Streaks */}
+                  <div className="absolute inset-0 opacity-8">
                     <div 
-                      className="absolute inset-0 animate-pulse" 
+                      className="absolute inset-0" 
                       style={{
-                        backgroundImage: `
-                          linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                        background: `
+                          linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.03) 25%, transparent 50%),
+                          linear-gradient(-45deg, transparent 0%, rgba(255,255,255,0.02) 25%, transparent 50%)
                         `,
-                        backgroundSize: '50px 50px',
-                        animation: 'pulse 15s cubic-bezier(0.22, 1, 0.36, 1) infinite'
+                        animation: 'pulse 18s cubic-bezier(0.22, 1, 0.36, 1) infinite'
                       }} 
                     />
                   </div>
 
-                  {/* Glowing Orbs */}
-                  <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-white/5 blur-3xl animate-pulse" />
-                  <div className="absolute bottom-1/3 left-1/3 w-24 h-24 rounded-full bg-white/3 blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
+                  {/* Subtle Animated Glow */}
+                  <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-white/4 blur-3xl opacity-60" 
+                       style={{ 
+                         animation: `pulse 12s cubic-bezier(0.22, 1, 0.36, 1) infinite`,
+                         animationDelay: `${index * 2}s`
+                       }} />
+                  <div className="absolute bottom-1/4 left-1/4 w-28 h-28 rounded-full bg-white/3 blur-2xl opacity-40" 
+                       style={{ 
+                         animation: `pulse 16s cubic-bezier(0.22, 1, 0.36, 1) infinite`,
+                         animationDelay: `${index * 3}s`
+                       }} />
                   
                   {/* Content */}
                   <div className="relative h-full flex flex-col justify-center items-center text-center p-8 md:p-16">
                     {/* Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-silver/90 border border-white/12 backdrop-blur-sm mb-8 ring-1 ring-inset ring-white/10">
-                      <span className="text-sm font-medium text-dark-900">The Vision</span>
+                    <div className={`inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm mb-8 ${card.badgeStyle}`}>
+                      <span className="text-sm font-medium">For business owners</span>
                     </div>
                     
                     {/* Main Content */}
-                    <h3 className={`text-3xl md:text-5xl font-bold mb-6 ${card.titleColor} ${card.textShadow} leading-tight hover:brightness-105 transition-all duration-300`}>
+                    <h3 className={`text-3xl md:text-5xl font-bold mb-6 ${card.titleColor} ${card.textShadow} leading-tight hover:brightness-110 transition-all duration-300`}>
                       {card.title}
                     </h3>
                     
@@ -210,8 +230,8 @@ const WhyBusinessesChoose = () => {
                     </p>
                   </div>
 
-                  {/* Inner Border */}
-                  <div className="absolute inset-[1px] rounded-2xl ring-1 ring-inset ring-white/8 pointer-events-none" />
+                  {/* Enhanced Inner Border */}
+                  <div className="absolute inset-[1px] rounded-2xl ring-1 ring-inset ring-white/12 pointer-events-none" />
                 </div>
               ))}
             </div>
