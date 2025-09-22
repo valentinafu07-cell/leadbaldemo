@@ -120,8 +120,8 @@ const WhyBusinessesChoose = () => {
           <div className="max-w-4xl mx-auto">
             
             {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <div className="text-center mb-16 pt-16">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 mt-8">
                 Why Businesses Choose <span className="text-gradient">Leadbal</span>
               </h2>
             </div>
