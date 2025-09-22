@@ -17,82 +17,80 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    /* Leadbal Brand Colors */
+    --leadbal-blue: 218 100% 50%; /* #0057FF */
+    --leadbal-navy: 216 72% 8%; /* #0A0F1A */
+    --leadbal-silver: 210 20% 97%; /* #F6F7F9 */
+    --leadbal-white: 0 0% 100%; /* #FFFFFF */
+    
+    /* Core System Colors mapped to Leadbal palette */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 216 72% 8%; /* Navy text */
+    --card: 210 20% 97%; /* Silver cards */
+    --card-foreground: 216 72% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 24 95% 53%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
+    --popover-foreground: 216 72% 8%;
+    --primary: 218 100% 50%; /* Leadbal Blue */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 97%; /* Silver */
+    --secondary-foreground: 216 72% 8%;
+    --muted: 210 20% 97%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --accent: 218 100% 50%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
+    --destructive-foreground: 0 0% 100%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 24 95% 53%;
-
-    --radius: 0.5rem;
-
+    --ring: 218 100% 50%;
+    --radius: 0.75rem;
+    
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-foreground: 216 72% 8%;
+    --sidebar-primary: 218 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 97%;
+    --sidebar-accent-foreground: 216 72% 8%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 218 100% 50%;
+    
+    /* Leadbal Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(218 100% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)));
+    --shadow-elegant: 0 4px 20px rgba(0, 87, 255, 0.08);
+    --shadow-elegant-hover: 0 8px 30px rgba(0, 87, 255, 0.15);
+    --shadow-glow: 0 0 40px rgba(0, 87, 255, 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 24 95% 53%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
+    --background: 216 72% 8%;
+    --foreground: 0 0% 100%;
+    --card: 217.2 32.6% 17.5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 72% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 218 100% 50%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
+    --secondary-foreground: 0 0% 100%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --accent: 218 100% 50%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
+    --destructive-foreground: 0 0% 100%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --ring: 218 100% 50%;
+    --sidebar-background: 216 72% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 218 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 218 100% 50%;
   }
 }
 
@@ -130,6 +128,75 @@
 }
 
 @layer components {
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-foreground;
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    @apply text-lg sm:text-xl text-muted-foreground leading-relaxed;
+  }
+
+  .leadbal-chip {
+    @apply inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20;
+  }
+
+  .leadbal-card {
+    @apply bg-card rounded-2xl p-6 shadow-elegant hover:shadow-elegant-hover transition-all duration-300 border border-border/50;
+  }
+
+  .feature-card {
+    @apply bg-card rounded-xl p-6 shadow-elegant hover:shadow-elegant-hover transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent;
+  }
+
+  .bg-leadbal-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full transition-all duration-200 hover:shadow-glow hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-card text-foreground font-medium rounded-full border border-border transition-all duration-200 hover:bg-accent hover:text-accent-foreground hover:scale-105;
+  }
+
+  .smallprint {
+    @apply text-xs text-muted-foreground;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  /* Magnetic hover effect for CTAs */
+  .magnetic-hover {
+    transition: var(--transition-smooth);
+  }
+
+  .magnetic-hover:hover {
+    transform: scale(1.02) translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Sticky CTA Bar */
+  .sticky-cta {
+    @apply fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border px-4 py-3;
+  }
+
+  /* Glassmorphism for modals */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+  
   .text-mask-image {
     background-clip: text;
     -webkit-background-clip: text;
@@ -138,40 +205,12 @@
     background-position: center;
   }
 
-  .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200;
-  }
-  
-  .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12;
-  }
-
-  .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight;
-  }
-
-  .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl;
-  }
-
   .glass-card {
-    @apply bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl shadow-elegant transition-all duration-300 hover:shadow-elegant-hover;
+    @apply bg-background/70 backdrop-blur-sm border border-border/20 rounded-2xl shadow-elegant transition-all duration-300 hover:shadow-elegant-hover;
   }
 
-  .feature-card {
-    @apply p-6 rounded-2xl transition-all duration-500 hover:translate-y-[-5px];
-  }
-  
-  .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-[1.02] active:scale-[0.98];
-  }
-
-  .button-secondary {
-    @apply bg-transparent border border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300;
-  }
-  
   .nav-link {
-    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;
+    @apply relative text-foreground hover:text-primary py-2 transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full;
   }
 }
 

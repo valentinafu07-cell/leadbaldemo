@@ -63,25 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Pulse Robot
-				pulse: {
-					"50": "#fff7ed",
-					"100": "#ffedd5",
-					"200": "#fed7aa",
-					"300": "#fdba74",
-					"400": "#fb923c",
-					"500": "#f97316", // Primary orange
-					"600": "#ea580c",
-					"700": "#c2410c",
-					"800": "#9a3412",
-					"900": "#7c2d12",
-					"950": "#431407",
-				},
-				dark: {
-					"900": "#121212", // Almost black
-					"800": "#1e1e1e",
-					"700": "#2d2d2d",
-					"600": "#3d3d3d",
+				// Leadbal brand colors
+				leadbal: {
+					blue: "#0057FF",
+					navy: "#0A0F1A", 
+					silver: "#F6F7F9",
+					white: "#FFFFFF",
 				},
 			},
 			borderRadius: {
@@ -137,19 +124,18 @@ export default {
 				'float': 'float 6s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'hero-gradient': 'linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%)',
-				'hero-gradient-2': 'linear-gradient(90deg, hsla(39, 100%, 77%, 1) 0%, hsla(22, 90%, 57%, 1) 100%)',
-				'pulse-gradient': 'linear-gradient(180deg, rgba(249,115,22,0.8) 0%, rgba(249,115,22,0) 100%)',
+				'hero-gradient': 'linear-gradient(135deg, hsl(218, 100%, 50%) 0%, hsl(218, 100%, 60%) 100%)',
+				'leadbal-gradient': 'linear-gradient(135deg, #0057FF 0%, #3374FF 100%)',
+				'subtle-gradient': 'linear-gradient(180deg, rgba(0, 87, 255, 0.05) 0%, rgba(0, 87, 255, 0) 100%)',
 			},
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
-				'display': ['Brockmann', 'SF Pro Display', 'Inter', 'sans-serif'],
-				'brockmann': ['Brockmann', 'serif'],
-				'playfair': ['"Playfair Display"', 'serif'],
+				'sans': ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
+				'display': ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
 			},
 			boxShadow: {
-				'elegant': '0 4px 20px rgba(0, 0, 0, 0.08)',
-				'elegant-hover': '0 8px 30px rgba(0, 0, 0, 0.12)',
+				'elegant': '0 4px 20px rgba(0, 87, 255, 0.08)',
+				'elegant-hover': '0 8px 30px rgba(0, 87, 255, 0.15)',
+				'glow': '0 0 40px rgba(0, 87, 255, 0.2)',
 			}
 		}
 	},
