@@ -165,28 +165,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* KPI Row */}
-      <div className="absolute bottom-8 left-0 right-0 z-20">
-        <div className="section-container">
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">24/7</div>
-              <div className="text-sm text-muted-foreground">Coverage</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">60%</div>
-              <div className="text-sm text-muted-foreground">Fewer no-shows*</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-foreground">3×</div>
-              <div className="text-sm text-muted-foreground">Faster lead pickup*</div>
-            </div>
-          </div>
-          <p className="smallprint text-center mt-4">
-            *Representative pilot results. Individual outcomes vary.
-          </p>
-        </div>
-      </div>
 
       {/* Audio Modal */}
       {showAudioModal && <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
