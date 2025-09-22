@@ -60,19 +60,19 @@ const WhyBusinessesChoose = () => {
     {
       title: "More Focus",
       content: "Leadbal gives business owners more focus — by taking calls, scheduling, and inbox management off your plate.",
-      background: "/leadbal-background1.png",
+      gradient: "from-primary/20 via-primary/10 to-transparent",
       accent: "text-primary"
     },
     {
       title: "More Time", 
       content: "Leadbal creates more time — reclaiming hours each week so teams can concentrate on high-value work.",
-      background: "/leadbal-background2.png",
+      gradient: "from-accent/20 via-accent/10 to-transparent",
       accent: "text-primary"
     },
     {
       title: "More Revenue",
       content: "Leadbal drives more revenue — by capturing missed calls and reviving leads that would otherwise be lost.",
-      background: "/leadbal-background3.png",
+      gradient: "from-orange-500/20 via-orange-500/10 to-transparent",
       accent: "text-orange-500"
     }
   ];
@@ -134,23 +134,35 @@ const WhyBusinessesChoose = () => {
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out"
+                  className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out border border-white/10"
                   style={getCardStyle(index)}
                 >
-                  {/* Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${card.background})` }}
-                  />
+                  {/* Futuristic Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/95 via-dark-900/80 to-dark-900/60" />
                   
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-dark-900/70" />
+                  {/* Animated Grid Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" 
+                         style={{
+                           backgroundImage: `
+                             linear-gradient(rgba(0,87,255,0.1) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(0,87,255,0.1) 1px, transparent 1px)
+                           `,
+                           backgroundSize: '50px 50px'
+                         }} 
+                    />
+                  </div>
+
+                  {/* Glowing Orbs */}
+                  <div className="absolute top-1/4 right-1/4 w-32 h-32 rounded-full bg-primary/20 blur-3xl animate-pulse" />
+                  <div className="absolute bottom-1/3 left-1/3 w-24 h-24 rounded-full bg-accent/15 blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
                   
                   {/* Content */}
                   <div className="relative h-full flex flex-col justify-center items-center text-center p-8 md:p-16">
                     {/* Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-                      <span className="text-sm font-medium text-white">The Vision</span>
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8">
+                      <span className="text-sm font-medium text-primary">The Vision</span>
                     </div>
                     
                     {/* Main Content */}
@@ -158,7 +170,7 @@ const WhyBusinessesChoose = () => {
                       {card.title}
                     </h3>
                     
-                    <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
+                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
                       {card.content}
                     </p>
                   </div>
