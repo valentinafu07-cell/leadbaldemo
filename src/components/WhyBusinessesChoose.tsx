@@ -134,20 +134,20 @@ const WhyBusinessesChoose = () => {
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out border border-white/10"
+                  className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 ease-out border border-border/20"
                   style={getCardStyle(index)}
                 >
                   {/* Futuristic Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${card.gradient}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/95 via-dark-900/80 to-dark-900/60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/95 via-foreground/80 to-foreground/60" />
                   
                   {/* Animated Grid Pattern */}
                   <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0" 
                          style={{
                            backgroundImage: `
-                             linear-gradient(rgba(0,87,255,0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(0,87,255,0.1) 1px, transparent 1px)
+                             linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+                             linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)
                            `,
                            backgroundSize: '50px 50px'
                          }} 
@@ -170,7 +170,7 @@ const WhyBusinessesChoose = () => {
                       {card.title}
                     </h3>
                     
-                    <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                    <p className="text-xl md:text-2xl text-white leading-relaxed max-w-2xl">
                       {card.content}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ const WhyBusinessesChoose = () => {
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === activeCardIndex 
                       ? 'bg-primary w-8' 
-                      : 'bg-white/30'
+                      : 'bg-border/30'
                   }`}
                 />
               ))}
