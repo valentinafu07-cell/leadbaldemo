@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import BenefitsTiles from "@/components/BenefitsTiles";
+import WhyBusinessesChoose from "@/components/WhyBusinessesChoose";
 import IndustryCards from "@/components/IndustryCards";
 import SecurityStrip from "@/components/SecurityStrip";
 import CTAWall from "@/components/CTAWall";
@@ -61,8 +62,9 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <MicroForm />
         <BenefitsTiles />
+        <WhyBusinessesChoose />
+        <MicroForm />
         <IndustryCards />
         <SecurityStrip />
         <CTAWall />
