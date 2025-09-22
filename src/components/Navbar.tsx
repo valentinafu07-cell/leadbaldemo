@@ -64,7 +64,8 @@ const Navbar = () => {
   return (
     <>
       <nav 
-        className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border shadow-elegant transition-all duration-300"
+        className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border shadow-elegant transition-all duration-300 opacity-100"
+        style={{ backgroundColor: 'hsl(var(--background))' }}
       >
         <div className="section-container py-6">
           <div className="flex items-center justify-between">
